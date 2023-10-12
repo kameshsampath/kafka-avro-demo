@@ -1,4 +1,4 @@
-# Kafka with Avro Schema Registry
+# Kafka with Confluent Schema Registry
 
 A demo to show how to produce and consume messages from [Confluent](https://cloud.confluent.io)' managed [Apache Kafka](https://kafka.apache.org). The messages are validated using [Apache Avro](https://avro.apache.org) schema.
 
@@ -148,7 +148,7 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 ./mvnw package -Dnative -Dquarkus.native.container-build=true
 ```
 
-You can then execute your native executable with: `./target/kafka-avro-schema-quickstart-1.0.0-SNAPSHOT-runner`
+You can then execute your native executable with: `./target/kafka-avro-demo-1.0.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
 

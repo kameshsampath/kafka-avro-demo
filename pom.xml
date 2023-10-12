@@ -5,7 +5,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>dev.kameshs.kafka.movies</groupId>
-  <artifactId>kafka-avro-schema-quickstart</artifactId>
+  <artifactId>kafka-avro-demo</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
