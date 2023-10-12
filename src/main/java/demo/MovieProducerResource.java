@@ -9,13 +9,14 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.Response;
 
 @Path("/movies")
-public class MovieResource {
-  private static final Logger LOGGER = Logger.getLogger(MovieResource.class);
+public class MovieProducerResource {
+  private static final Logger LOGGER = Logger.getLogger(MovieProducerResource.class);
 
-  @Channel("movies")
+  @Channel("movies-to-kafka")
   Emitter<Movie> emitter;
 
   @POST
+  @Path("/add")
   public Response enqueueMovie(Movie movie) {
     LOGGER.infof("Sending movie %s to Kafka", movie.getTitle());
     emitter.send(movie);

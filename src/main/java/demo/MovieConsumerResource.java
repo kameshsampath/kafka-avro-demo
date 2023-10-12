@@ -11,15 +11,16 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @ApplicationScoped
-@Path("/consumed-movies")
-public class MovieConsumer {
+@Path("/movies")
+public class MovieConsumerResource {
+
   @Channel("movies-from-kafka")
   Multi<Movie> movies;
 
   @GET
   @Produces(MediaType.SERVER_SENT_EVENTS)
-  @RestStreamElementType(MediaType.TEXT_PLAIN)
-  public Multi<String> stream() {
-    return movies.map(movie -> String.format("'%s' from %s", movie.getTitle(), movie.getYear()));
+  @RestStreamElementType(MediaType.APPLICATION_JSON)
+  public Multi<Movie> stream() {
+    return movies;
   }
 }
